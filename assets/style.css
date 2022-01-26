@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+#content{
+    position: relative;
+    float: left;
+    width: 75%;
+}
+header{
+    display: inline;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    /* padding: 10px 20px; */
+    height: 55px;
+    /* align-items: center; */
+    position: sticky;
+    top: 0; 
+    background-color: rgb(255, 255, 255);
+    align-items: center; 
+}
+nav .logo{
+    font-weight: bold;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    width: 50%;  
+    justify-content:space-between;  
+}
+nav ul li a{
+    font-size: 0.8em;
+    /* font-weight: 300px;  */
+    text-decoration: none;
+    color: black;
+    margin-bottom: 11px;
+} 
+nav ul li a:hover{
+    font-weight: bold;
+}
+body{
+    font-family:'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+main{
+    padding: 20px;
+    overflow: auto;
+}
+h2{
+    color: #00a2c6;
+    text-align: center;
+    margin-top: 30px;
+}
+h3{
+    color: #00a2c6;
+    text-align: center;
+}
+aside h2,aside h3{
+    color: white;
+}
+aside{
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+    border-radius: 20px;
+    background-color: cadetblue;
+    align-items: center;
+}
+footer{
+    padding: 20px;
+    color: white;
+    background-color: cadetblue;
+    text-align: center;
+    font-weight: bold;
+}
+#home{
+    font-size: 20px;
+    padding: 60px;
+    background-color: #4FBDBA;
+    text-align: center;
+}
+#kegiatan h4{
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+#fasilitas{
+    /* border-style: solid; 
+    border-radius:15px; */
+    line-height: 20px;
+}
+#fasilitas img{
+    width: 40px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+#tentang p{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#tentang h4{
+    margin-top: 30px;
+}
+#tentang img{
+    border-radius: 15px;
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    position: relative;
+    justify-content: space-between;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+/*ham menu animasi*/
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+} 
+.menu-toggle span:nth-child(4){
+    transform-origin: bottom left;
+}
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+.flex-container-column{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+    
+
+    /* properti pendukung
+   max-width: 800px;
+   margin: 0 auto;
+   text-align: center;
+   padding-top: 20px; */
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+}
+.box{
+    flex-basis: 250px;
+    margin: 0 auto;
+    text-align: center;
+}
+.box-fasilitas{
+    flex-basis: 150px;
+    height: 130px;
+    margin: 0 auto;
+    text-align: center;
+}
+.box-tentang{
+    margin: 0 auto;
+    text-align: center;
+}
+.me img{
+    width: 170px;
+    border-radius: 15px;
+}
+.me{
+    color: white;
+}
+.me header{
+    text-align: center;
+}
+.card{
+    margin: 6%;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 0px;
+}
+
+.table-penulis{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+.table-penulis td,.table-penulis th{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+@media all and (max-width: 568px){
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        right: 0;   
+        top: 0;
+        flex-direction: column;
+        /* width: 30%; */
+        height: 50vh;
+        margin-top: 10px;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background: rgb(255, 255, 255);
+        backdrop-filter: blur(10px);
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+    nav ul.slide{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+@media screen and (max-width: 586px){
+    nav ul{
+        width: 100%;
+    } 
+} 
+@media screen and (max-width: 1000px) {
+        #content,
+        aside {
+            width: 100%;
+            padding: 0;
+        }
+    }
