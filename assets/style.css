@@ -21,6 +21,7 @@ nav {
     top: 0; 
     background-color: rgb(255, 255, 255);
     align-items: center; 
+    z-index: 999;
 }
 nav .logo{
     font-weight: bold;
