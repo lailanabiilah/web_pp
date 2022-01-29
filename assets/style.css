@@ -67,7 +67,6 @@ aside h2,aside h3{
 aside{
     float: right;
     width: 25%;
-    padding-left: 20px;
     border-radius: 20px;
     background-color: cadetblue;
     align-items: center;
@@ -191,7 +190,9 @@ footer{
     text-align: center;
 }
 .me img{
-    width: 170px;
+    width: 100%;
+    /* max-width: 170px; */
+    height: auto;
     border-radius: 15px;
 }
 .me{
@@ -202,6 +203,8 @@ footer{
 }
 .card{
     margin: 6%;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 5px;
     padding: 20px;
     margin-top: 0px;
@@ -255,5 +258,8 @@ footer{
         aside {
             width: 100%;
             padding: 0;
+        }
+        .me img{
+            width: 25%;
         }
     }
